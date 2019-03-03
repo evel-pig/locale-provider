@@ -1,6 +1,6 @@
 {
   "name": "@epig/locale-provider",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "国际化组件",
   "main": "lib/index.js",
   "scripts": {
