@@ -2,6 +2,7 @@ import * as React from 'react';
 import { LocaleContext } from './LocaleReceiver';
 export { LocaleContext, LocaleContextInterface } from './LocaleReceiver';
 export { default as LocaleReceiver } from './LocaleReceiver';
+export { default as useLocale } from './useLocale';
 
 export interface LocaleProviderProps {
   locale: any;
