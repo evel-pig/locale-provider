@@ -2,6 +2,7 @@ import * as Adapter from 'enzyme-adapter-react-16';
 import * as React from 'react';
 import { configure, mount } from 'enzyme';
 import LocaleProvider, { LocaleReceiver, useLocale } from '../index';
+import { LocaleReceiverProps } from '../LocaleReceiver';
 
 configure({ adapter: new Adapter() });
 
@@ -10,7 +11,9 @@ interface Locale {
   registerBtnText: string;
 }
 
-class MyLocaleReceiver extends LocaleReceiver<Locale> {}
+function MyLocaleReceiver(props: LocaleReceiverProps<Locale>) {
+  return LocaleReceiver(props);
+}
 
 class App extends React.Component<any, any> {
   render() {

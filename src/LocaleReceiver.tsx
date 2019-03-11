@@ -12,19 +12,10 @@ export const LocaleContext = React.createContext<LocaleContextInterface<any>>({
   locale: {},
 });
 
-export default class LocaleReceiver<T = any> extends React.Component<LocaleReceiverProps<T>, any> {
-  static contextType = LocaleContext;
-  context: LocaleContextInterface<T>;
-
-  constructor(props) {
-    super(props);
-  }
-
-  getLocale = () => {
-    return this.context.locale;
-  }
-
-  public render() {
-    return this.props.children(this.getLocale());
-  }
+export default function LocaleReceiver<T = any>(props: LocaleReceiverProps<T>) {
+  return (
+    <LocaleContext.Consumer>
+      {({ locale }) => props.children(locale)}
+    </LocaleContext.Consumer>
+  );
 }
